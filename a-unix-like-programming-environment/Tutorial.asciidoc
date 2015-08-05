@@ -1,0 +1,142 @@
+= A Unix-like Programming Environment
+Oleksandr Shturmov <oleks@oleks.info>
+v1.0, July 31, 2015
+:toc:
+
+The purpose of this tutorial is to introduce you to a philosophy of using the
+computer, perhaps different from what you are accustomed to.
+
+This philosophy stands on the shoulders of many pioneers of modern operating
+systems and programming environments.
+
+The reason that this way of using a computer is not in wide-spread adoption is
+perhaps due to:
+
+. a general public disinterest in computer programming,
+. a fondness of the general public of
+http://en.wikipedia.org/wiki/Graphical_user_interface[graphical user
+interfaces], and
+. the resulting sectaraniasm of those who practice what we preach.
+
+////
+This tutorial is in close spirit with the popular book "The UNIX Programming
+Environment", by Brian W. Kernighan and Rob Pike, Prentice Hall, 1984, and
+serves perhaps as a modern introduction to the book, should you choose to read
+it.
+////
+
+This tutorial is by no means comprehensive, and is not intended as a reference
+beyond its philosophical considerations. As part of the tutorial, we will try
+to point you to materials for further study.
+
+== The Bits of History
+
+UNIX® is trademark of http://www.unix.org/what_is_unix.html[The Open Group],
+who stand to certify products which conform to their
+http://www.unix.org/online.html[Single UNIX Specification]. Colloquially
+however, UNIX refers to a family of operating systems developed at Bell Labs in
+the 1970s, and their countless descendants.
+
+[quote, Brian W. Kernigan and Rob Pike, "The UNIX Programming Environment, Prentice Hall, 1984"]
+____
+Even though the UNIX system introduces a number of innovative programs and
+techniques, no single program or idea makes it work well. Instead, what makes
+it effective is an approach to programming, a philosophy of using the computer.
+Although that philosophy can't be written down in a single sentence, at its
+heart is the idea that the power of a system comes more from the relationships
+among programs than from the programs themselves. Many UNIX programs do quite
+trivial tasks in isolation, but, combined with other programs, become general
+and useful tools.
+____
+
+A 1982 Bell Labs video, recently made available under the AT&T Archives,
+starring such pioneers as Ken Thompson, Dennis Ritchie, and Brian W. Kernighan,
+gives further insight into what the original UNIX systems were like; the
+philosophy and history behind them:
+
+++++
+<center><iframe width="420" height="315"
+src="https://www.youtube.com/embed/tc4ROCJYbm0" frameborder="0"
+allowfullscreen></iframe></center>
+++++
+
+An important aspect of the history of UNIX is that it has always been guided by
+the needs of its users and programmers.
+
+Later, so-called Integrated Development Environments (IDEs) emerged, the most
+popular today being perhaps http://www.eclipse.org/[Eclipse],
+https://developer.apple.com/xcode/[Xcode], and
+https://www.visualstudio.com/[Visual Studio] (no marketing intended). The
+history of IDEs goes far beyond these modern giants, but perhaps a unifying
+theme for all of them has been to offer an integrated text editor, compiler,
+debugger, build system, and more.
+
+There are two problems with the IDE approach. First, they have a steep learning curve. It is hard to limit
+
+== Hello, Terminal
+
+The crux of a Unix-like programming environment is a Unix-like command-line
+interface with the operating system, often referred to as a "terminal".
+
+The interface interprets a string of characters as a command, and yields a
+string of characters as the result of executing the command.
+
+A command-line interface takes text as
+input and produces text as output.
+
+ DEFINITION: A "shell" is a user interface for accessing the services offered
+ by an operating system.
+
+One of the benefits of dealing with a command-line interface is that it does
+not require the use of screenshots to show either sample inputs or outputs of a
+computer program.
+
+You are **strongly discouraged** in the use of screenshots for such purposes.
+Not least because, as you already have seen, terminals can visually look very
+different on different operating systems.
+
+=== Linux
+
+=== Mac OS
+
+=== Windows
+
+=== Other
+
+If you're reading this tutorial on a handheld device, you are out of luck. The
+iOS and Android operating systems are too uptight for us to set up a truly
+Unix-like programming environment. Besides, programming on a handheld device is
+somewhat obnoxious.
+
+If you're reading this on your personal computer and using something other than
+Linux, Mac OS, and Windows, chances are, you are already familiar with a
+Unix-like terminal(if not, let us know!), and you can skip directly past the
+following section.
+
+== Working with Directories and Files
+
+== Installing Software
+
+== Text-editors
+
+== Other Text Processing Utilities
+
+== Automating Your Workflows With Shell Scripts
+
+Repetitive tasks can be grouped together.
+
+``Button pushers can be easily replaced.''
+
+You might be familiar with this due to the concept of "macros" in products like
+Microsoft Office and LibreOffice.
+
+video::2kEJoWfobpA[youtube]
+
+== Further Study
+
+. Eric Steven Raymond. _The Art of Unix Programming_.
+http://www.catb.org/~esr/writings/taoup/html/index.html. Revision 1.0,
+September 2003.
+
+Windows: Install cygwin, ignore the signature (not very secure anyhow), choose
+Donwload Site (any will do).
