@@ -1,0 +1,3 @@
+= Debugging C with GDB
+
+Authors note: GDB offers a REPL for C.
