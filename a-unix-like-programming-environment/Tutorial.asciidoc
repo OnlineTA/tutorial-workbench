@@ -4,9 +4,10 @@ v1.0, July 31, 2015
 :toc:
 
 The purpose of this tutorial is to introduce you to a philosophy of using the
-computer, perhaps different from what you are accustomed to.
+computer.
 
-This philosophy stands on the shoulders of many pioneers of modern operating
+This philosophy is likely to be different from what you are accustomed to; and
+yet, it stands on the shoulders of the humble pioneers of many modern operating
 systems and programming environments.
 
 The reason that this way of using a computer is not in wide-spread adoption is
@@ -24,18 +25,36 @@ Environment", by Brian W. Kernighan and Rob Pike, Prentice Hall, 1984, and
 serves perhaps as a modern introduction to the book, should you choose to read
 it.
 ////
-
+////
 This tutorial is by no means comprehensive, and is not intended as a reference
 beyond its philosophical considerations. As part of the tutorial, we will try
 to point you to materials for further study.
+////
 
 == The Bits of History
 
 UNIX® is trademark of http://www.unix.org/what_is_unix.html[The Open Group],
 who stand to certify products which conform to their
 http://www.unix.org/online.html[Single UNIX Specification]. Colloquially
-however, UNIX refers to a family of operating systems developed at Bell Labs in
-the 1970s, and their countless descendants.
+however, "Unix" refers to a family of operating systems developed at Bell Labs
+in the 1970s, and their countless descendants, such as Linux, FreeBSD, and Mac
+OS X.
+
+A 1982 Bell Labs video, recently made available under the AT&T Archives,
+starring such pioneers as Ken Thompson, Dennis Ritchie, and Brian W. Kernighan,
+gives further insight into what the original UNIX systems were like—the
+philosophy and history behind them:
+
+++++
+<center><iframe width="420" height="315"
+src="https://www.youtube.com/embed/tc4ROCJYbm0" frameborder="0"
+allowfullscreen></iframe></center>
+<br/>
+++++
+
+An important aspect of the history of UNIX is that it has always been guided by
+the needs of its users and programmers. This goal, quite incidentally, results
+in a philosophy:
 
 [quote, Brian W. Kernigan and Rob Pike, "The UNIX Programming Environment, Prentice Hall, 1984"]
 ____
@@ -49,19 +68,20 @@ trivial tasks in isolation, but, combined with other programs, become general
 and useful tools.
 ____
 
-A 1982 Bell Labs video, recently made available under the AT&T Archives,
-starring such pioneers as Ken Thompson, Dennis Ritchie, and Brian W. Kernighan,
-gives further insight into what the original UNIX systems were like; the
-philosophy and history behind them:
+As a result of this philosophy, a Unix-like programming environment is
+ultimately about *freedom*: the freedom to choose how to structure your
+programming environment. It is how you choose to combine the programs we
+discuss below that determines the structure, benefits, and efficiency of your
+programming environment.
 
-++++
-<center><iframe width="420" height="315"
-src="https://www.youtube.com/embed/tc4ROCJYbm0" frameborder="0"
-allowfullscreen></iframe></center>
-++++
+For pedagogical reasons, we won't endorse this freedom to it's utopian extent:
+you will work on predefined programming projects, with predeclared programming
+conventions. This tutorial exists to emphasize that other programming
+environments might be very well be much more suitable to your intents. Of
+course, we do retain _some_ degrees of freedom, such as the choice of text
+editor.
 
-An important aspect of the history of UNIX is that it has always been guided by
-the needs of its users and programmers.
+////
 
 Later, so-called Integrated Development Environments (IDEs) emerged, the most
 popular today being perhaps http://www.eclipse.org/[Eclipse],
@@ -71,7 +91,11 @@ history of IDEs goes far beyond these modern giants, but perhaps a unifying
 theme for all of them has been to offer an integrated text editor, compiler,
 debugger, build system, and more.
 
+A Unix-like programming environment keeps these things separate, but lets you bind them as you find most convenient (rather than force a development environment upon you).
+
 There are two problems with the IDE approach. First, they have a steep learning curve. It is hard to limit
+
+////
 
 == Hello, Terminal
 
@@ -116,6 +140,12 @@ following section.
 == Working with Directories and Files
 
 == Installing Software
+
+=== Linux
+
+=== Mac OS
+
+=== Windows
 
 == Text-editors
 
