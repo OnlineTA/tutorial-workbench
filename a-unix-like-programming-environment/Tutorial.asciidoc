@@ -2,6 +2,8 @@
 Oleksandr Shturmov <oleks@oleks.info>
 v1.0, July 31, 2015
 :toc:
+:sectnums:
+:sectanchor:
 
 The purpose of this tutorial is to introduce you to a philosophy of using the
 computer.
@@ -34,11 +36,10 @@ to point you to materials for further study.
 == The Bits of History
 
 UNIX® is trademark of http://www.unix.org/what_is_unix.html[The Open Group],
-who stand to certify products which conform to their
+who stand to certify products which conform to the
 http://www.unix.org/online.html[Single UNIX Specification]. Colloquially
 however, "Unix" refers to a family of operating systems developed at Bell Labs
-in the 1970s, and their countless descendants, such as Linux, FreeBSD, and Mac
-OS X.
+in the 1970s, and their countless descendants.
 
 A 1982 Bell Labs video, recently made available under the AT&T Archives,
 starring such pioneers as Ken Thompson, Dennis Ritchie, and Brian W. Kernighan,
@@ -46,8 +47,8 @@ gives further insight into what the original UNIX systems were like—the
 philosophy and history behind them:
 
 ++++
-<center><iframe width="420" height="315"
-src="https://www.youtube.com/embed/tc4ROCJYbm0" frameborder="0"
+<center><iframe width="640" height="480"
+src="https://www.youtube.com/embed/XvDZLjaCJuw" frameborder="0"
 allowfullscreen></iframe></center>
 <br/>
 ++++
@@ -68,11 +69,10 @@ trivial tasks in isolation, but, combined with other programs, become general
 and useful tools.
 ____
 
-As a result of this philosophy, a Unix-like programming environment is
-ultimately about *freedom*: the freedom to choose how to structure your
-programming environment. It is how you choose to combine the programs we
-discuss below that determines the structure, benefits, and efficiency of your
-programming environment.
+A Unix-like programming environment is ultimately about *freedom*: the freedom
+to choose how to structure your programming environment. It is how you choose
+to combine the programs we discuss below that determines the structure,
+benefits, and efficiency of your programming environment.
 
 For pedagogical reasons, we won't endorse this freedom to it's utopian extent:
 you will work on predefined programming projects, with predeclared programming
@@ -100,30 +100,169 @@ There are two problems with the IDE approach. First, they have a steep learning 
 == Hello, Terminal
 
 The crux of a Unix-like programming environment is a Unix-like command-line
-interface with the operating system, often referred to as a "terminal".
+interface with the operating system, often referred to as a "shell" or
+"terminal".
 
-The interface interprets a string of characters as a command, and yields a
-string of characters as the result of executing the command.
+A https://en.wikipedia.org/wiki/Command-line_interface[command-line interface
+(CLI)] interprets textual commands, rather than e.g.  mouse clicks or gestures.
+A CLI presents the user with a line where they can enter text, and prompts the
+user to enter a command. The user can then type away at the keyboard, and
+finally type ↵ to "enter" the command. The CLI will then respond by executing
+the command, which may or may not have some directly observable effect, and
+perhaps, eventually, present the user with another prompt.
 
-A command-line interface takes text as
-input and produces text as output.
+For instance, recall the Moscow ML CLI from the time you had Introduction to
+Programming:
 
- DEFINITION: A "shell" is a user interface for accessing the services offered
- by an operating system.
+----
+Moscow ML version ...
+Enter `quit();' to quit.
+- 5+5;
+> val it = 10 : int
+- 
+----
 
-One of the benefits of dealing with a command-line interface is that it does
-not require the use of screenshots to show either sample inputs or outputs of a
-computer program.
+Here, the user is prompted to enter a command by a dash (`-`), followed by a
+space:  When you see a line starting with a prompt, you know MoscowML is
+waiting for you to enter a command.
 
-You are **strongly discouraged** in the use of screenshots for such purposes.
-Not least because, as you already have seen, terminals can visually look very
-different on different operating systems.
+Another CLI you might already be familiar with is the Python CLI:
 
-=== Linux
+----
+Python ...
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 5+5
+10
+>>>
+----
 
-=== Mac OS
+Here, the prompt is 3 chevrons (`>>>`), followed by a space.
+
+The prompt of a Unix-like "terminal" or "shell" is typically a dollar sign
+(very American!), followed by a space. As with MoscowML and Python, the
+commands you type into a shell are written in a particular "shell programming
+language". The first thing that this language lets you do is execute the
+programs stored on your computer. For instance, the program `echo` simply
+prints its argument back to the user:
+
+----
+$ echo 10
+10
+$ 
+----
+
+Many systems will prepend the dollar with some contextual information, such as
+the current working directory, the name of the machine (hostname), and the user
+you are working as. For instance,
+
+----
+student@laptop:~/ark/$ echo 10
+10
+student@laptop:~/ark/$ 
+----
+
+*Note:* On Unix-like systems, `~` stands for the home directory of the current
+user.
+
+We say that this prompt has the following format:
+
+----
+<user>@<hostname>:<cwd>$
+----
+
+Where `<cwd>` stands for current working directory: A shell, like any other
+program, is always working from the point of view of a particular directory in
+your file system.  The current working directory is important when dealing with
+commands that deal with files.
+
+Some other things you might do at the terminal is launch a MoscowML CLI:
+
+----
+$ mosml
+Moscow ML version ...
+Enter `quit();' to quit.
+- 5+5;
+> val it = 10 : int
+- quit();
+$ 
+----
+
+Or launch a Python CLI:
+
+----
+$ python
+Python ...
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 5+5
+10
+>>> quit()
+$
+----
+
+Now let's get you started at a terminal on your own system.
+
+////
+
+=== Ubuntu
+
+http://www.ubuntu.com/[Ubuntu] is a https://www.debian.org/[Debian]-based
+https://en.wikipedia.org/wiki/Linux[Linux] operating system. At its core is the
+https://en.wikipedia.org/wiki/Linux_kernel[Linux kernel], a Unix-like operating
+system kernel, originally conceived by
+https://en.wikipedia.org/wiki/Linus_Torvalds[Linus Torvalds] in 1991. The Linux
+kernel is the https://www.youtube.com/watch?v=L2SED6sewRw[fastest moving]
+https://en.wikipedia.org/wiki/Open_source[Open-Source] project known to man,
+which is still in very active development.  There are many
+https://en.wikipedia.org/wiki/Linux_distribution[Linux distributions] out
+there, Debian being just one of the more popular ones.  Ubuntu was designed to
+make Linux more accessible to the general public.
+
+Search for the program called "Terminal", and launch the application.
+
+====
+
+**EXERCISE**
+
+Try using the `echo` and `python` commands as we did above. If you (still) have
+MoscowML installed, try using `mosml`. Python ships by default with Ubuntu.
+
+====
+
+=== OS X
+
+https://en.wikipedia.org/wiki/OS_X[OS X], originally named Mac OS X is the
+family of operating systems shipped with http://www.apple.com/[Apple] laptops,
+desktop computers, and servers. The "X" marks the transition from the original
+Mac OS to a
+https://en.wikipedia.org/wiki/Berkeley_Software_Distribution[BSD]-based
+operating system in 2001. The BSD family of Unix-like operating systems was
+originally conceived at
+https://en.wikipedia.org/wiki/University_of_California,_Berkeley[University of
+California, Berkeley] in the late 1970s.
+
+Use Spotlight to search for the program called "Terminal", and launch the
+application.
+
+A typical OS X prompt is formatted as follows:
+
+----
+<hostname>:<cwd> <user>$
+----
+
+====
+
+**EXERCISE**
+
+Try using the `echo` and `python` commands as we did above. If you (still) have
+MoscowML installed, try using `mosml`. Python ships by default with OS X.
+
+====
 
 === Windows
+
+For historical reasons, the Windows shell is substantially different from a
+Unix-like shell.
+
 
 === Other
 
@@ -133,11 +272,87 @@ Unix-like programming environment. Besides, programming on a handheld device is
 somewhat obnoxious.
 
 If you're reading this on your personal computer and using something other than
-Linux, Mac OS, and Windows, chances are, you are already familiar with a
-Unix-like terminal(if not, let us know!), and you can skip directly past the
-following section.
+Ubuntu, OS X, or Windows, chances are, you are already familiar with a
+Unix-like terminal(if not, let us know!), and you can skip directly to
+<<text-editors>>.
+
+////
+
+== Hello, Linux
+
+Although it is possible to set up a Unix-like programming environment in both
+OS X and Windows (install Xcode with command-line tools on OS X, install cygwin
+on Windows), the options available will not give us a unified approach.
+
+The sort of things we'll do vary across these families of operating systems,
+even though the concepts stay the same. We would be forced to have a Linux, OS
+X, and Windows track in (almost) all our tutorials and assignments.  This would
+not be very pedagogical, not to mention, time consuming and fragile!
+
+Instead, we'll focus on Linux. The reason we choose Linux is that the insides
+of a Linux-based operating system are often both open-source and (publicly)
+well-documented. Something we can't say about either OS X and Windows at the
+time of writing. Last, but not least, many Linux's are free.
+
+If not already running Linux, we recommend that you either install a native
+Linux partition in your spare time (we recommend Arch Linux) or install
+VirtualBox in your host operating system, and run Linux in a virtual machine.
+We've already prepared a VirtualBox image for you.
+
+== Documenting Shell Commands
+
+Although we used screenshots above to guide you to a terminal, this was the
+first and last time that we use screenshots: One of the benefits of dealing
+with a command-line interface is that it does not require the use of
+screenshots to document program interactions. All you need to document a CLI is
+text. This also makes it easy for the reader to copy/paste the shell commands
+into their own terminal.
+
+You are similarly **strongly discouraged** in the use of screenshots for
+documenting your own work.
+
+The shell prompt we will typically use will be formatted as follows:
+
+----
+<cwd>$ 
+----
+
+The current working directory will (almost) always start with `~/ark/`. In your
+case, `~` might refer to your home directory or some other directory. For
+instance, you might already have a `Documents` directory in your home directory
+and a `DIKU` directory in there. Then you can freely understand `~` as
+`~/Documents/DIKU/`, should you find it more convenient.
 
 == Working with Directories and Files
+
+Let us create that infamous `ark` directory in our home (`~`) directory.
+
+----
+~$ mkdir ark
+----
+
+To change the current working directory, use the `cd` command:
+
+----
+~$ cd ark
+~/ark$ 
+----
+
+To go up in the directory structure, we need to type `..` as destination.
+
+----
+~/ark$ cd ..
+$ 
+----
+
+----
+$ mkdir ark/unix
+$ cd ark/unix
+~/ark/unix$ 
+----
+
+We can use `ls` to list the contents of a directory. You probably have 
+
 
 == Installing Software
 
